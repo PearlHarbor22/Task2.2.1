@@ -32,6 +32,7 @@ public class UserDaoImp implements UserDao {
               .createQuery(hql, User.class)
               .setParameter("model", model)
               .setParameter("series", series)
+              .setMaxResults(1)
               .uniqueResult();
    }
 }

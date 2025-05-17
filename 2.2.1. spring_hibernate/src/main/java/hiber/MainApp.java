@@ -13,7 +13,6 @@ public class MainApp {
    public static void main(String[] args) throws SQLException {
       AnnotationConfigApplicationContext context = 
             new AnnotationConfigApplicationContext(AppConfig.class);
-
       UserService userService = context.getBean(UserService.class);
       Car car1 = new Car("LADA", 123);
       Car car2 = new Car("LADA", 133);
@@ -37,9 +36,10 @@ public class MainApp {
       }
       User foundUser = userService.getUserByCar("LADA", 123);
       if (foundUser != null) {
-         System.out.println("Пользователь с машиной Car2 456: " + foundUser);
+         System.out.println("Пользователь с нужной машиной найден: "
+                 + foundUser);
       } else {
-         System.out.println("Такой пользователь не найден.");
+         System.out.println("Пользователь не найден");
       }
 
       context.close();
