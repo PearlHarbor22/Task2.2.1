@@ -35,7 +35,12 @@ public class MainApp {
          System.out.println("Email = "+user.getEmail());
          System.out.println();
       }
-
+      User foundUser = userService.getUserByCar("LADA", 123);
+      if (foundUser != null) {
+         System.out.println("Пользователь с машиной Car2 456: " + foundUser);
+      } else {
+         System.out.println("Такой пользователь не найден.");
+      }
 
       context.close();
    }
